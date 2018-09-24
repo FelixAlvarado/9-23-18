@@ -24,3 +24,26 @@ node4.left = node7;
 node4.right = node8;
 node5.right = node9;
 node3.right = node6;
+
+function numberPathSum(root, target, cache = {}, count = 0){
+    if(!root){
+        return count;
+    }
+
+    if(root.val === target){
+        count += 1;
+    }
+
+    if(cache[root.val]){
+        count += 1;
+    }
+
+    let newCache = {};
+    Object.keys(cache).forEach((el)=>{
+        newCache[el = root.val] = true;
+    });
+
+    return numberPathSum(root.left, target, Object.assign({},newCache), count) + numberPathSum(root.right, target, Object.assign({},newCache), count);
+}
+
+console.log('returns 8', numberPathSum(node1, 8));
