@@ -30,6 +30,9 @@ function numberPathSum(root, target, cache = {}, count = 0){
         return count;
     }
 
+
+
+
     if(root.val === target){
         count += 1;
     }
@@ -38,6 +41,8 @@ function numberPathSum(root, target, cache = {}, count = 0){
         count += 1;
     }
 
+
+    
     let newCache = {};
     Object.keys(cache).forEach((el)=>{
         newCache[el = root.val] = true;
