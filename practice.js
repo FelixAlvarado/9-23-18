@@ -6,7 +6,12 @@ var buildTree = function(inorder, postorder) {
         if(inorder[rootIndex - 1] === root.val){rootIndex -= 1;}
         else{rootIndex += 1;}
     }
+
+
     let last = null;
+
+
+    
     for(let i = 1; i < rootIndex; i++){
         if(i + 1 === rootIndex) continue;
         if()
